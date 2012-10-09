@@ -15,7 +15,7 @@ void setup(){
 }
 
 void draw(){
-  closestValue = 600; 
+  closestValue = 500; 
   kinect.update();
   // get the depth array from the kinect
   int[] depthValues = kinect.depthMap();
@@ -52,5 +52,5 @@ void draw(){
   fill(255,0,0);
   ellipse(closestX, closestY, 25, 25);
   
-  output.close();
+  //output.close();
 }
