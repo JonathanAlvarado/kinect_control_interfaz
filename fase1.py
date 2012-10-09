@@ -3,6 +3,11 @@
 from sys import argv
 from numpy import *
 from numpy.random import *
+import os #Para la ejecucion de programas externos (Processing)
+
+'''
+os.system('jarvis.pde')
+'''
 
 low = -1
 high = 1
