@@ -34,7 +34,7 @@ void draw(){
       closestX = x;
       closestY = y;
       println(x+","+y);
-      output.println(x+","+y);
+      output.println(x+" "+y);
       output.flush();
       //if(x<320){
           //println("x= "+x + "y= "+y);
