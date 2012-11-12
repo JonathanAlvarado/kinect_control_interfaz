@@ -1,0 +1,49 @@
+commit a463e484a3c1f29001d655702864c53551b92a67
+Author: Osvaldo Hinojosa <osvaldo.javier14@gmail.com>
+Date:   Sun Nov 11 13:59:29 2012 -0600
+
+    Agregamos la url del proyecto
+
+commit fa089685d0a53636b530206d7c2ef15c3dd552e9
+Author: osvaldojavier14 <osvaldo.javier14@gmail.com>
+Date:   Tue Oct 9 02:32:05 2012 -0500
+
+    un poco de comentarios
+
+commit cf71402f21324e1916acb746af75329154a6bcc4
+Author: osvaldojavier14 <osvaldo.javier14@gmail.com>
+Date:   Tue Oct 9 01:59:20 2012 -0500
+
+    se modifico todo el codigo
+
+commit 928c81524fe091f3e78e516230f0cb83eeede8fb
+Author: eddypre <eddypre@hotmail.com>
+Date:   Tue Oct 9 00:23:12 2012 -0500
+
+    Update fase1.py
+    
+    Agregando libreria os y la linea que manda a ejecutar el jarvis.pde
+
+commit 2c1c7022a2224f948732a90b13b59305d4bac7a8
+Author: JonathanAlvarado <jonathan.aam92@gmail.com>
+Date:   Tue Oct 9 00:15:28 2012 -0500
+
+    captura coordenadas como x y
+
+commit e17d0b94f3db06db519b9c88037c03640f3eecfa
+Author: JonathanAlvarado <jonathan.aam92@gmail.com>
+Date:   Mon Oct 8 22:43:44 2012 -0500
+
+    captura todas las coordenadas
+
+commit 5ee66e9bdcb31340fc95362e22241dcbcc2b5e81
+Author: JonathanAlvarado <jonathan.aam92@gmail.com>
+Date:   Mon Oct 8 22:23:30 2012 -0500
+
+    script kinect
+
+commit 259ffb812dea5670942d15863af089a9cedfd2c0
+Author: JonathanAlvarado <jonathan.aam92@gmail.com>
+Date:   Mon Oct 8 21:53:38 2012 -0500
+
+    Inicia proyecto
