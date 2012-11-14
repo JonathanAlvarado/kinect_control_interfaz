@@ -1,5 +1,6 @@
 from random import *
 from numpy import *
+
 class neurona():
     def __init__(self):
         self.entrada = zeros(3)
