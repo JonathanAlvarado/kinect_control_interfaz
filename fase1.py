@@ -72,6 +72,22 @@ class neurona(object):
 		return vecsf
 		#suma = sum(pesos * entrada)
 		#return suma
+	
+	'''
+	#Obteniendo errores ****
+	def error(z, vecP)
+	'''
+	Errores = [d1, d2, d3, dn]
+	z = valor deseado
+	vecP = vector de pesos
+	'''
+
+	'''
+	Fin de programa
+	'''
+	return vectorErrores
+	#Fin de obteniendo errores
+	'''
 
 	def __init__(self, archivo):
 		(self.entradas, self.dimencion)  = self.leerE(archivo) # Vector de entradas
