@@ -73,7 +73,7 @@ class neurona(object):
 		#suma = sum(pesos * entrada)
 		#return suma
 	
-	'''
+	"""
 	#Obteniendo errores ****
 	def error(z, vecP)
 	'''
@@ -87,7 +87,7 @@ class neurona(object):
 	'''
 	return vectorErrores
 	#Fin de obteniendo errores
-	'''
+	"""
 
 	def __init__(self, archivo):
 		(self.entradas, self.dimencion)  = self.leerE(archivo) # Vector de entradas
