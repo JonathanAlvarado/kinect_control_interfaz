@@ -66,6 +66,7 @@ def hand_tracker():
     screenFlipped = pygame.display.set_mode((xSize,ySize),pygame.RESIZABLE) 
     screen.fill(BLACK)
     done = False
+    mano = False
 
     while not done:
         screen.fill(BLACK)
@@ -91,8 +92,19 @@ def hand_tracker():
         screenFlipped = pygame.transform.flip(screen,1,0)
         screen.blit(screenFlipped,(0,0))
         pygame.display.flip()
-        
-            
+                
+	try:
+            centroidX = blobData.centroid[0][0]
+            centroidY = blobData.centroid[0][1]
+            if mano:
+		print centroidX, " ", centroidY
+    	    else:
+		strX = centroidX #Initializes the starting X
+                strY = centroidY #Initializes the starting Y
+                mano = True
+	except:
+	    mano = False
+
         for e in pygame.event.get():
             if e.type is pygame.QUIT:
                 done = True
