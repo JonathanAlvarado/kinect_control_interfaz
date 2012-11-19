@@ -57,11 +57,13 @@ class neurona(object):
 		return (vectEntra, dimencion)
 
 	def generarP(self, largo, dimencion):	
-		vectorP = zeros((largo,dimencion)) 
+		vectorP = empty((largo,dimencion)) 
 		for i in range(largo):
 			for j in range(dimencion):
 				vectorP[i][j] = uniform(MIN, MAX)
 		return vectorP
+
+
 
 	def sumatoria(self, largo, dimencion, vecE, vecP):
 		print vecE
@@ -69,10 +71,16 @@ class neurona(object):
 		vecs = zeros(largo)
 		for i in range(largo):
 			vecs[i] = sum(vecE[i] * vecP[i])
-		return vecsf
-		#suma = sum(pesos * entrada)
-		#return suma
-
+		return vecs
+		###########################################
+		#segun AVE
+		#vecs =  empty(largo)
+		#for i in range(largo):
+		#	for j in range(dimencion):
+		#		vecs[i] = (vecE[j] * vecP[j])
+		#return vecs
+		###########################################
+		
 	def __init__(self, archivo):
 		(self.entradas, self.dimencion)  = self.leerE(archivo) # Vector de entradas
 		########################### PARAMETROS QUE REGRESA ##########################
@@ -81,6 +89,11 @@ class neurona(object):
 		#############################################################################
 		self.pesoEntra = self.generarP(self.dimencion, self.dimencion)
 		self.pesoSali = self.generarP(self.dimencion, self.dimencion - 1)
+
+
+	def prueba(self, algo): 
+		return algo
+
 
 # argv[1] => archivo con las coordenas del kinect 
 def main():
@@ -91,11 +104,15 @@ def main():
 	for i in vecEntrada:
 			nueva.i = i
 			#print nueva.i  
-			nueva.capa = nueva.sumatoria(nueva.dimencion, nueva.dimencion, nueva.i, nueva.pesoEntra)
-			nueva.capaSali = nueva.sumatoria(nueva.dimencion, nueva.dimencion - 1, nueva.capa, nueva.pesoSali)
+			nueva.capa = nueva.sumatoria(nueva.dimencion, nueva.dimencion, \
+				nueva.i, nueva.pesoEntra)
+			nueva.capaSali = nueva.sumatoria(nueva.dimencion, nueva.dimencion - 1,\
+				nueva.capa, nueva.pesoSali)
 
 	print "peso entrada",nueva.pesoEntra
 	print "valor de la capa", nueva.capa
 	print "valor de la salida", nueva.capaSali
+
+	nueva.algo = nueva.prueba(nueva.capaSali)
 
 main()
