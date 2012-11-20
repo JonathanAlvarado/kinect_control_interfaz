@@ -42,6 +42,7 @@ def main():
 
     print "entrada = ",nueva.entrada    
     print "peso entrada",nueva.pesoen
+    print "peso capa", nueva.pesoca
     print "valor de la caoa",nueva.capa 
     print "valor de la salida",nueva.csalida
 
