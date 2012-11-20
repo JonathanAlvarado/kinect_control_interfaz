@@ -6,7 +6,7 @@
 # Jona y Triana: Investigaron todo lo que es backpropagation
 # Entre: Osvaldo, Jona Y Triana codificaron la funcion backPropagate, cargar, entrenar
 # Osvaldo: La funcion para sacar los valores esperados
-# Esteban: Se encargo de buscar la formula para encontrar el error en las neuronas
+# Esteban: Se encargo de buscar y codificar la formula para encontrar el error en las neuronas
 # Jona Y Esteban: Trabajaron con el kinect, aunque no se logro implementar inviertieron
 # gran tiempo en ello.
 # Triana Y Osvaldo: Se escargaron de las funciones de "cajon" como leerArchivo, autocompletar
