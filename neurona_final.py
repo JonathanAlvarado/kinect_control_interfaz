@@ -161,19 +161,19 @@ class neurona(object):
 		if len(inputs) != self.dimension-1:
 			raise ValueError("No coinciden los largos")
 
-		# input activations
+		# activar entradas
 		for i in range(self.dimension - 1):
 			# self.ai[i] = sigmoid(inputs[i])
 			self.ai[i] = inputs[i]
 	    
-		# hidden activations
+		# activar capas ocultas
 		for j in range(self.dimension - 2):
 			sum = 0.0
 			for i in range(self.dimension):
 				sum = sum + self.ai[i] * self.pesoEntra[i][j]
 			self.ah[j] = sigmoid(sum)
 
-		# output activations
+		# activas salidas
 		for k in range(self.dimension - 1):
 			sum = 0.0
 			for j in range(self.dimension - 2):
