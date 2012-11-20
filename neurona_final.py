@@ -90,21 +90,6 @@ class neurona(object):
 			vecs[i] = sum(vecE[i] * vecP[i])
 		return vecs
 
-	def calcularF123(self, pesoSali, f4, f5):
-		f1 = ((pesoSali[0][0] * f4) + (pesoSali[0][1] * f5))
-		f2 = ((pesoSali[1][0] * f4) + (pesoSali[1][1] * f5))
-		f3 = ((pesoSali[2][0] * f4) + (pesoSali[2][1] * f5))
-		return(f1, f2, f3)
-
-
-	def calcularF(self, capaSali, pesoSali):
-		valorX = abs(capaSali[0])
-		valorY = abs(capaSali[1])
-		f4 = Zx - valorX 
-		f5 = Zy - valorY
-		(f1, f2, f3) = self.calcularF123(pesoSali, f4, f5) 
-		return(f1, f2, f3, f4, f5)
-
 	def imprimirArchivo(self, pesoEntra):
 		archivo = open("vectorPesos.txt", "w")
 		for lista in pesoEntra:
@@ -132,13 +117,13 @@ class neurona(object):
 		if len(targets) != self.dimension - 1:
 			raise ValueError("No coinciden los largos")
 
-		# calculate error terms for output
+		# calcula el error para las salidas
 		output_deltas = [0.0] * (self.dimension - 1)
 		for k in range(self.dimension - 1):
 			error = targets[k]-self.ao[k]
 			output_deltas[k] = dsigmoid(self.ao[k]) * error
 
-		# calculate error terms for hidden
+		# calcula el error para las capas ocultas
 		hidden_deltas = [0.0] * (self.dimension - 2)
 		for j in range(self.dimension - 2):
 			error = 0.0
@@ -146,22 +131,21 @@ class neurona(object):
 				error = error + output_deltas[k]*self.pesoSali[j][k]
 			hidden_deltas[j] = dsigmoid(self.ah[j]) * error
 
-		# update output weights
+		# actualiza los pesos de salida
 		for j in range(self.dimension - 2):
 			for k in range(self.dimension - 1):
 				change = output_deltas[k]*self.ah[j]
 				self.pesoSali[j][k] = self.pesoSali[j][k] + N*change + M*self.momentumSali[j][k]
 				self.momentumSali[j][k] = change
-				# print N*change, M*self.co[j][k]
 
-		# update input weights
+		# actualiza de los pesos de salida
 		for i in range(self.dimension):
 			for j in range(self.dimension - 2):
 				change = hidden_deltas[j]*self.ai[i]
 				self.pesoEntra[i][j] = self.pesoEntra[i][j] + N*change + M*self.momentumEntra[i][j]
 				self.momentumEntra[i][j] = change
 
-		# calculate error
+		# calcula el error
 		error = 0.0
 		for k in range(len(targets)):
 			error = error + 0.5 * (targets[k] - self.ao[k]) ** 2
@@ -170,7 +154,6 @@ class neurona(object):
 	def prueba(self, entradas):
 		for p in entradas:
 			print(p, '->', self.cargar(p))
-
 	
 	def cargar(self, inputt):
 		inputs = list(inputt[:-1])
@@ -268,22 +251,6 @@ def main():
 
 	nueva.entrenar(vecEntrada, inter)
 	nueva.prueba(vecEntrada)
-
-	#for i in vecEntrada:
-			#nueva.i = i
-			#print nueva.i  
-			#nueva.capa = nueva.sumatoria(nueva.dimencion, nueva.dimencion, \
-			#	nueva.i, nueva.pesoEntra)
-			#nueva.capaSali = nueva.sumatoria(nueva.dimencion, nueva.dimencion - 1,\
-			#	nueva.capa, nueva.pesoSali)
-			#### AQUI va un if para verificar si hubo error y reajustar pesos
-			#(nueva.f1, nueva.f2, nueva.f3, nueva.f4, nueva.f5) = \
-			#	nueva.calcularF(nueva.capaSali, nueva.pesoSali)
-			#print "***F1", nueva.f1
-			#print "***F2", nueva.f2
-			#print "***F3", nueva.f3
-			#print "***F4", nueva.f4
-			#print "***F5", nueva.f5
 
 	#print "-------------------------"
 	print "PESO ENTRADA"
